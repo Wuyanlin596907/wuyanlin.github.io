@@ -1,27 +1,32 @@
 你是那人间的四月天
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>网页链接示例</title>
+    <title>Markdown Files</title>
 </head>
 <body>
-    <h1>网页链接示例</h1>
-    
-    <!-- 基本链接 -->
-    <p>这是一个基本链接：<a href="https://github.com/Wuyanlin596907/wuyanlin.github.io/blob/main/README.md">访问示例网站</a></p>
-    
-    <!-- 在新标签页打开链接 -->
-    <p>在新标签页打开链接：<a href="https://www.example.com" target="_blank">在新标签页访问示例网站</a></p>
-    
-    <!-- 带有提示文本的链接 -->
-    <p>带有提示文本的链接：<a href="https://www.example.com" title="点击访问示例网站">示例网站</a></p>
-    
-    <!-- 链接到同一目录下的其他HTML文件 -->
-    <p>链接到本地文件：<a href="otherpage.html">访问其他页面</a></p>
-    
-    <!-- 链接到同一目录下的其他文件 -->
-    <p>链接到PDF文件：<a href="document.pdf">查看文档</a></p>
+    <h1>Markdown Files</h1>
+    <ul id="markdown-list"></ul>
+    <script>
+        // This function is for demonstration purposes only and may not work in all browsers due to security restrictions.
+        function listMarkdownFiles() {
+            const markdownList = document.getElementById('markdown-list');
+            // Assuming the server provides a way to list files, otherwise this needs to be done server-side.
+            // Here we manually list the files for demonstration.
+            const files = ['file1.md', 'file2.md', 'file3.md']; // Replace with actual file list
+
+            files.forEach(file => {
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                a.href = `viewmd.html?file=${file}`;
+                a.textContent = file;
+                li.appendChild(a);
+                markdownList.appendChild(li);
+            });
+        }
+
+        listMarkdownFiles();
+    </script>
 </body>
 </html>
