@@ -1,32 +1,31 @@
-你是那人间的四月天
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <title>Markdown Files</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown文件内容显示</title>
 </head>
 <body>
-    <h1>Markdown Files</h1>
-    <ul id="markdown-list"></ul>
+    <h1>Markdown文件内容</h1>
+    <!-- 链接显示.md文件内容 -->
+    <a href="javascript:void(0);" onclick="loadMarkdown('example.md')">显示Markdown文件内容</a>
+    <div id="markdown-content"></div>
+
     <script>
-        // This function is for demonstration purposes only and may not work in all browsers due to security restrictions.
-        function listMarkdownFiles() {
-            const markdownList = document.getElementById('markdown-list');
-            // Assuming the server provides a way to list files, otherwise this needs to be done server-side.
-            // Here we manually list the files for demonstration.
-            const files = ['file1.md', 'file2.md', 'file3.md']; // Replace with actual file list
-
-            files.forEach(file => {
-                const li = document.createElement('li');
-                const a = document.createElement('a');
-                a.href = `viewmd.html?file=${file}`;
-                a.textContent = file;
-                li.appendChild(a);
-                markdownList.appendChild(li);
-            });
+        function loadMarkdown(filename) {
+            // 创建XMLHttpRequest对象
+            var xhr = new XMLHttpRequest();
+            // 配置GET请求并指定文件路径
+            xhr.open('GET', filename, true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    // 请求成功，将文件内容显示在div中
+                    document.getElementById('markdown-content').innerHTML = xhr.responseText;
+                }
+            };
+            // 发送请求
+            xhr.send();
         }
-
-        listMarkdownFiles();
     </script>
 </body>
 </html>
