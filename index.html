@@ -3,29 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Markdown文件内容显示</title>
+    <title>Markdown文件链接</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .markdown-link {
+            display: inline-block;
+            margin: 10px 0;
+            padding: 8px 15px;
+            background-color: #f0f0f0;
+            border-radius: 4px;
+            text-decoration: none;
+            color: #333;
+            border: 1px solid #ddd;
+        }
+        .markdown-link:hover {
+            background-color: #e0e0e0;
+        }
+    </style>
 </head>
 <body>
-    <h1>Markdown文件内容</h1>
-    <!-- 链接显示.md文件内容 -->
-    <a href="javascript:void(0);" onclick="loadMarkdown('example.md')">显示Markdown文件内容</a>
-    <div id="markdown-content"></div>
-
-    <script>
-        function loadMarkdown(filename) {
-            // 创建XMLHttpRequest对象
-            var xhr = new XMLHttpRequest();
-            // 配置GET请求并指定文件路径
-            xhr.open('GET', filename, true);
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState === 4 && xhr.status === 200) {
-                    // 请求成功，将文件内容显示在div中
-                    document.getElementById('markdown-content').innerHTML = xhr.responseText;
-                }
-            };
-            // 发送请求
-            xhr.send();
-        }
-    </script>
+    <h1>Markdown文件</h1>
+    
+    <!-- 这里替换为你的.md文件名 -->
+    <a href="example.md" target="_blank" class="markdown-link">查看Markdown文件内容</a>
+    
+    <!-- 如果有多个.md文件，可以添加更多链接 -->
+    <!-- <a href="another.md" target="_blank" class="markdown-link">查看另一个Markdown文件</a> -->
 </body>
 </html>
