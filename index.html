@@ -1,3 +1,12 @@
+<script>
+    function passwordProtect(){
+        var password = prompt("请输入访问密码：");
+        if (password !== "jiangshanfenghua"){
+            alert("密码错误！");
+        }
+    }
+    passwordProtect();
+</script>
 <!DOCTYPE html>
 <html lang="zh">
 <head>
@@ -27,9 +36,8 @@
     </style>
 </head>
 <body>
-    <h1>Markdown文件</h1>
+    <h1>InAs Nanosheet</h1>
     
-    <!-- 这里替换为你的.md文件名 -->
     <a href="README.md" target="_blank" class="markdown-link">README</a>
     
     <a href="1.docx" target="_blank" style="display: inline-block; padding: 10px 15px; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 4px;">泛函分析笔记</a>
